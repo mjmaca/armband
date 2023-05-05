@@ -1,0 +1,10 @@
+.sidebar {
+    background-color: green !important;
+}
+
+.image {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    background-color: #fff;
+}
