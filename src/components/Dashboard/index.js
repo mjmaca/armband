@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+import axios from 'axios';
+
 import { Card, Col, Row } from 'antd';
 import styles from './Dashboard.module.css'
 
@@ -36,6 +38,7 @@ const location = {
 }
 
 const api = {
+    // https://api.weatherbit.io/v2.0/current?lat=14.1513&lon=121.1386&key=95de754f1de1452ab356be5dff93578c&include=minutely
     key: "95de754f1de1452ab356be5dff93578c",
     base: "https://api.weatherbit.io/v2.0/",
     long: '121.13480571827556',
@@ -68,6 +71,13 @@ export default function Dashboard() {
                 console.log("OpenWeather:", result)
               });
           };
+
+          const fetchData = async () => {
+            const response = await axios.get('http://localhost:3000/data');
+            console.log(response.data);
+          };
+        
+          fetchData();
 
           OpenWeather();
           WeatherBit();
