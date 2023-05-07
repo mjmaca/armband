@@ -18,7 +18,7 @@ const Login = props => {
     
     return (
         <>
-            <Image width={200} src="/logo.png" preview={false} lat="logo" />        
+            <Image width={200} src="/logo.png" preview={false} alt="logo" />        
             <Form
                 name="normal_login"
                 className={styles.form}
