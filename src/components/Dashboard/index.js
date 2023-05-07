@@ -73,7 +73,7 @@ export default function Dashboard() {
           };
 
           const fetchData = async () => {
-            const response = await axios.get('http://localhost:3000/data');
+            const response = await axios.get('https://armband.vercel.app/temp');
             console.log(response.data);
           };
         
