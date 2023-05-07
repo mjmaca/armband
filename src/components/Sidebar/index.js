@@ -39,13 +39,13 @@ export default function Sidebar() {
             style={{ height: '100%', borderRight: 0, backgroundColor: 'green' }}
         >
             <Menu.Item key="/dashboard" icon={<DashboardOutlined />}>
-                <Link to="/dashboard">Dashboard</Link>
+                <Link href="dashboard">Dashboard</Link>
             </Menu.Item>
             <Menu.Item key="/attendance" icon={<MenuOutlined />}>
-                <Link to="/attendance">Attendance</Link>
+                <Link href="/attendance">Attendance</Link>
             </Menu.Item>
             <Menu.Item key="/heart-rate" icon={<MenuOutlined />}>
-                <Link to="/heart-rate">Heart Rate</Link>
+                <Link href="/heart-rate">Heart Rate</Link>
             </Menu.Item>
             <Menu.Item key="/body-temperature" icon={<MenuOutlined />} title="Human Temperature">Human Temperature</Menu.Item>
             <Menu.Item key="/device" icon={<LaptopOutlined />} title="Device">Device</Menu.Item>
@@ -56,7 +56,7 @@ export default function Sidebar() {
             >
                 <Menu.Item icon={<UserAddOutlined />} key="/register">Register</Menu.Item>
                 <Menu.Item icon={<LogoutOutlined />}  key="/">                
-                    <Link to="/">Logout</Link>
+                    <Link href="/">Logout</Link>
                 </Menu.Item>
             </Menu.SubMenu>
         </Menu>
