@@ -30,7 +30,7 @@ export default function Sidebar() {
     <>
         <Sider width={300} className={`site-layout-background ${styles.sidebar}`}>
         <div className={styles.image}>   
-            <Image width={200} src="/logo.png" preview={false}  />
+            <Image width={200} src="/logo.png" preview={false} alt="logo" />
         </div>
         <Menu
             mode="inline"
@@ -39,13 +39,13 @@ export default function Sidebar() {
             style={{ height: '100%', borderRight: 0, backgroundColor: 'green' }}
         >
             <Menu.Item key="/dashboard" icon={<DashboardOutlined />}>
-                <a href="/dashboard">Dashboard</a>
+                <Link to="/dashboard">Dashboard</Link>
             </Menu.Item>
             <Menu.Item key="/attendance" icon={<MenuOutlined />}>
-                <a href="/attendance">Attendance</a>
+                <Link to="/attendance">Attendance</Link>
             </Menu.Item>
             <Menu.Item key="/heart-rate" icon={<MenuOutlined />}>
-                <a href="/heart-rate">Heart Rate</a>
+                <Link to="/heart-rate">Heart Rate</Link>
             </Menu.Item>
             <Menu.Item key="/body-temperature" icon={<MenuOutlined />} title="Human Temperature">Human Temperature</Menu.Item>
             <Menu.Item key="/device" icon={<LaptopOutlined />} title="Device">Device</Menu.Item>
@@ -56,7 +56,7 @@ export default function Sidebar() {
             >
                 <Menu.Item icon={<UserAddOutlined />} key="/register">Register</Menu.Item>
                 <Menu.Item icon={<LogoutOutlined />}  key="/">                
-                    <a href="/">Logout</a>
+                    <Link to="/">Logout</Link>
                 </Menu.Item>
             </Menu.SubMenu>
         </Menu>
