@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Card, Col, Row } from 'antd';
 import styles from './Dashboard.module.css'
 
@@ -35,7 +35,43 @@ const location = {
     destination: 'Barangay Turbina, Calamba City, Laguna'
 }
 
+const api = {
+    key: "95de754f1de1452ab356be5dff93578c",
+    base: "https://api.weatherbit.io/v2.0/",
+    long: '121.13480571827556',
+    lat: '14.148759449444478'
+  };
+
+const apiURL = {
+    base: 'https://api.openweathermap.org/data/2.5/weather',
+    key: 'ff0bf87aaa59c081ef75440b535ea4b4',
+    city: 'makiling'
+
+}
+
 export default function Dashboard() {
+
+    useEffect(() => {
+        const WeatherBit = () => {
+            fetch(`${api.base}current?lat=${api.lat}&lon=${api.long}&key=${api.key}`)
+              .then((res) => res.json())
+              .then((result) => {
+                console.log("weatherBit:", result)
+              });
+          };
+
+          const OpenWeather = () => {
+
+              fetch(`${apiURL.base}?q=${apiURL.city}&appId=${apiURL.key}&unit=metric`)
+              .then((res) => res.json())
+              .then((result) => {
+                console.log("OpenWeather:", result)
+              });
+          };
+
+          OpenWeather();
+          WeatherBit();
+    },[])
     return (
     <>
         <Row gutter={16} className={styles.row} >
